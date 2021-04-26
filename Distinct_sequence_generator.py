@@ -124,7 +124,7 @@ def ls4char(DNA_string):
 	###
 	allperm = alllex(DNA_string)
 	finallistall = compall3strings(permlst)
-	outstr1 = ",".join(finallistall)
+	outstr1 = finallistall
 	outstr2 = Distance_Matrix(finallistall)
 	return outstr1, outstr2
 
@@ -140,8 +140,9 @@ def grt6char(DNA_string):
 					x_shuff.append("".join(shuffle(ii)))
 		elif len(x_shuff) >= 96:
 			break
-	outstr1 = ",".join(x_shuff[:96])
-	outstr2 = Distance_Matrix(x_shuff[:96])
+	#print(len(x_shuff[0:96]))
+	outstr1 = x_shuff[0:96]
+	outstr2 = Distance_Matrix(x_shuff[0:96])
 	return outstr1, outstr2
 
 if len(DNA_string) == 0:
@@ -149,21 +150,21 @@ if len(DNA_string) == 0:
 	DNA_string = "cccgacaagccaggtgctagcgcatttcatttcacgagcagctacctctcaggggagcccaggccaattctcatctcagcctcccacttaggcgtaccta"
 	#DNA_string = "cattaccaacccgcgaccaatagccacgttaggagggaaccgtcataaaaaccgcatctcgtcaacgattctcggatttgcgaaccgcatagcaacctcgatatgtagcaattctgttataactattggtcgggctataaagcgtatttaaaacgacagcaacgcagagggtttcacatagttgtataatctttccacat"
 	if len(DNA_string) <= 5:
-		print("total list of words: "+ str(ls4char(DNA_string)[0]))
+		print("total list of words: "+ str(",".join(ls4char(DNA_string)[0])))
 		print("word length: "+ str(len(ls4char(DNA_string)[0])))
 		print("Distance_Matrix: "+ str(ls4char(DNA_string)[1]))
 	else:
-		print("total list of words: "+ str(grt6char(DNA_string)[0]))
+		print("total list of words: "+ str(",".join(grt6char(DNA_string)[0])))
 		print("word length: "+ str(len(grt6char(DNA_string)[0])))
 		print("Distance_Matrix: "+ str(grt6char(DNA_string)[1]))
 
 elif len(DNA_string) != 0:
 	if len(DNA_string) <= 5:
-		print("total list of words: "+ str(ls4char(DNA_string)[0]))
+		print("total list of words: "+ str(",".join(ls4char(DNA_string)[0])))
 		print("word length: "+ str(len(ls4char(DNA_string)[0])))
 		print("Distance_Matrix: "+ str(ls4char(DNA_string)[1]))
 	else:
-		print("total list of words: "+ str(grt6char(DNA_string)[0]))
+		print("total list of words: "+ str(",".join(grt6char(DNA_string)[0])))
 		print("word length: "+ str(len(grt6char(DNA_string)[0])))
 		print("Distance_Matrix: "+ str(grt6char(DNA_string)[1]))
 
