@@ -2,7 +2,9 @@
 
 """
 Script to generate a list of maximum of 96 distinct sequences with no more than three consecutive bases matches.
---Written by G V Saripella
+
+Author: G V Saripella
+Year: 2021
 """
 
 from sklearn.utils import shuffle
